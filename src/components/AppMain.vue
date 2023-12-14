@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <ul v-if="this.store.searchKey !== ''">
+    <ul>
         <li v-for="movie in this.store.movieList">
             <Card :title="movie.title" :ogTitle="movie.original_title" :lang="movie.original_language"
                 :rate="movie.vote_average" />

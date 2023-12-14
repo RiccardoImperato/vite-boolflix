@@ -14,15 +14,11 @@ export default {
     },
     methods: {
         search() {
-            axios.get(this.store.apiURLdefault + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
+            axios.get(this.store.apiURL + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
                 this.store.movieList = response.data.results;
             });
-
-        }
+        },
     },
-    created() {
-        this.search()
-    }
 }
 </script>
 
