@@ -14,17 +14,6 @@ export default {
     },
     methods: {
         search() {
-
-            // if (this.store.searchKey === '') {
-            //     axios.get('https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=a01536814a9012d0b06fa934f49c4c7b').then((response) => {
-            //         this.store.movieList = response.data.results;
-            //     });
-            // } else {
-            //     axios.get(this.store.apiURLdefault + '?query=' + this.store.searcKey + '&api_key=' + this.store.apiKey).then((response) => {
-            //         this.store.movieList = response.data.results;
-            //     });
-            // }
-
             axios.get(this.store.apiURLdefault + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
                 this.store.movieList = response.data.results;
             });

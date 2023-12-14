@@ -1,5 +1,4 @@
 <script >
-import axios from 'axios';
 import { store } from '../store';
 import Card from './Card.vue';
 
@@ -12,16 +11,6 @@ export default {
             store
         }
     },
-    methods: {
-        search() {
-            axios.get(this.store.apiURLdefault + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
-                this.store.movieList = response.data.results;
-            });
-        }
-    },
-    created() {
-        this.search()
-    }
 }
 </script>
 
