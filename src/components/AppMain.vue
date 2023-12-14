@@ -1,10 +1,12 @@
 <script >
 import { store } from '../store';
-import Card from './Card.vue';
+import MovieCard from './MovieCard.vue';
+import tvCard from './TvCard.vue'
 
 export default {
     components: {
-        Card
+        MovieCard,
+        tvCard
     },
     data() {
         return {
@@ -17,8 +19,12 @@ export default {
 <template>
     <ul>
         <li v-for="movie in this.store.movieList">
-            <Card :title="movie.title" :ogTitle="movie.original_title" :lang="movie.original_language"
+            <MovieCard :title="movie.title" :ogTitle="movie.original_title" :lang="movie.original_language"
                 :rate="movie.vote_average" />
+        </li>
+        <li v-for="serie in this.store.tvList">
+            <tvCard :name="serie.name" :ogName="serie.original_name" :lang="serie.original_language"
+                :rate="serie.vote_average" />
         </li>
     </ul>
 </template>

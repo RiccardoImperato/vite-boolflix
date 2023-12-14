@@ -12,9 +12,7 @@ export default {
 
 <template>
     <div>
-        <h4>
-            {{ title }}
-        </h4>
+        <h4>{{ title }}</h4>
         <p>
             Titolo originale: {{ ogTitle }}
         </p>
@@ -27,4 +25,4 @@ export default {
     </div>
 </template>
 
-<style></style>
+<style scoped></style>

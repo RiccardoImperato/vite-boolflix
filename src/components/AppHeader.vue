@@ -17,6 +17,9 @@ export default {
             axios.get(this.store.apiURL + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
                 this.store.movieList = response.data.results;
             });
+            axios.get(this.store.apiURLtv + '?api_key=' + this.store.apiKey + '&query=' + this.store.searchKey).then((response) => {
+                this.store.tvList = response.data.results;
+            });
         },
     },
 }
