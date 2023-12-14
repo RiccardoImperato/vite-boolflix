@@ -2,6 +2,7 @@
 
 export default {
     props: {
+        img: String,
         name: String,
         ogName: String,
         lang: String,
@@ -13,17 +14,15 @@ export default {
 <template>
     <div>
         <h4>
-            Serie TV: {{ name }}
+            {{ name }} - TV
         </h4>
-        <p>
+        <div>
             Titolo originale: {{ ogName }}
-        </p>
-        <p>
-            Lingua originale: {{ lang }}
-        </p>
-        <p>
+        </div>
+        <div>
             Voto: {{ rate }}
-        </p>
+        </div>
+
     </div>
 </template>
 
