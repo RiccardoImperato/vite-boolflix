@@ -1,13 +1,13 @@
 <script >
 import { store } from '../store';
 import MovieCard from './MovieCard.vue';
-import tvCard from './TvCard.vue';
+import TvCard from './TvCard.vue';
 import Flag from './Flag.vue';
 
 export default {
     components: {
         MovieCard,
-        tvCard,
+        TvCard,
         Flag
     },
     data() {
@@ -25,8 +25,7 @@ export default {
             <Flag :lang="movie.original_language" />
         </li>
         <li v-for="serie in this.store.tvList">
-            <tvCard :name="serie.name" :ogName="serie.original_name" :lang="serie.original_language"
-                :rate="serie.vote_average" />
+            <TvCard :name="serie.name" :ogName="serie.original_name" :rate="serie.vote_average" />
             <Flag :lang="serie.original_language" />
         </li>
     </ul>

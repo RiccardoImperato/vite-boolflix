@@ -13,16 +13,15 @@ export default {
 
 <template>
     <div>
-        <h4>
+        <h3>
             {{ name }} - TV
-        </h4>
+        </h3>
         <div>
-            Titolo originale: {{ ogName }}
+            Titolo originale: <h4>{{ ogName }}</h4>
         </div>
         <div>
             Voto: {{ rate }}
         </div>
-
     </div>
 </template>
 

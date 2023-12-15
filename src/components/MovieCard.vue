@@ -1,5 +1,4 @@
 <script >
-import Flag from './Flag.vue';
 
 export default {
     props: {
@@ -13,11 +12,11 @@ export default {
 
 <template>
     <div>
-        <h4>
+        <h3>
             {{ title }} - Movie
-        </h4>
+        </h3>
         <div>
-            Titolo originale: {{ ogTitle }}
+            Titolo originale: <h4>{{ ogTitle }}</h4>
         </div>
         <div>
             Voto: {{ rate }}
