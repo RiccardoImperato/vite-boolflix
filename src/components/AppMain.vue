@@ -1,13 +1,11 @@
 <script >
 import { store } from '../store';
-import MovieCard from './MovieCard.vue';
-import TvCard from './TvCard.vue';
+import Card from './Card.vue';
 import Flag from './Flag.vue';
 
 export default {
     components: {
-        MovieCard,
-        TvCard,
+        Card,
         Flag
     },
     data() {
@@ -20,14 +18,18 @@ export default {
 
 <template>
     <ul>
+
         <li v-for="movie in this.store.movieList">
-            <MovieCard :img="movie.poster_path" :title="movie.title" :ogTitle="movie.original_title"
+            <Card :img="movie.poster_path" :title="movie.title" :ogTitle="movie.original_title"
                 :rate="movie.vote_average" />
             <Flag :lang="movie.original_language" />
+            <h4>Movie</h4>
         </li>
+
         <li v-for="serie in this.store.tvList">
-            <TvCard :img="serie.poster_path" :name="serie.name" :ogName="serie.original_name" :rate="serie.vote_average" />
+            <Card :img="serie.poster_path" :title="serie.name" :ogTitle="serie.original_name" :rate="serie.vote_average" />
             <Flag :lang="serie.original_language" />
+            <h4>TV series</h4>
         </li>
     </ul>
 </template>
