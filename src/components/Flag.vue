@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 div {
-    margin: 20px 0;
+    margin: 10px 0;
 
     img {
         width: 50px;

@@ -6,7 +6,8 @@ export default {
         name: String,
         ogName: String,
         lang: String,
-        rate: Number
+        rate: Number,
+        img: String
     }
 }
 </script>
@@ -17,6 +18,9 @@ export default {
             {{ name }} - TV
         </h3>
         <div>
+            <img :src="'https://image.tmdb.org/t/p/w342' + img" :alt="name">
+        </div>
+        <div v-if="name !== ogName">
             Titolo originale: <h4>{{ ogName }}</h4>
         </div>
         <div>
