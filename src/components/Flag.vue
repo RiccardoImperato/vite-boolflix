@@ -17,13 +17,18 @@ export default {
     <div v-else>Lingua originale: <span>{{ lang }}</span></div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 div {
-    margin: 10px 0;
+    margin-right: auto;
 
     img {
+        display: block;
         width: 50px;
         height: 30px;
+    }
+
+    span {
+        text-transform: uppercase;
     }
 }
 </style>

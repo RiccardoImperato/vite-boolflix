@@ -32,5 +32,14 @@ export default {
     </header>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+header {
+    margin: 30px 20px;
+
+    h1 {
+        color: #ff0000;
+        margin-bottom: 20px;
+    }
+}
+</style>
 
