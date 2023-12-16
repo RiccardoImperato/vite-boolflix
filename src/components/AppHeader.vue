@@ -34,9 +34,11 @@ export default {
 
 <style scoped lang="scss">
 header {
-    margin: 30px 20px;
+    padding: 20px 40px;
+    background-color: #000;
 
     h1 {
+        font-size: 40px;
         color: #ff0000;
         margin-bottom: 20px;
     }
