@@ -13,7 +13,8 @@ export default {
 <template>
     <!-- Serach input -->
     <div>
-        <input type="text" placeholder="Cerca film o serie TV" v-model="this.store.searchKey" id="search">
+        <input @keyup.enter="$emit('search')" type="text" placeholder="Cerca film o serie TV" v-model="this.store.searchKey"
+            id="search">
         <button @click="$emit('search')">Search</button>
     </div>
     <!--/ Serach input -->
@@ -21,11 +22,18 @@ export default {
 
 <style scoped lang="scss">
 input {
+    all: unset;
     width: 250px;
     margin-right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #222222;
 }
 
 button {
-    padding: 0 15px;
+    all: unset;
+    padding: 3px 15px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 </style>
