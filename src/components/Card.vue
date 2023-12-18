@@ -31,6 +31,7 @@ export default {
         </div>
     </div>
     <!--/ Movies and Series cover -->
+
     <!-- Movies - Series info -->
     <div class="info">
         <!-- Title -->
@@ -41,6 +42,7 @@ export default {
             </div>
         </div>
         <!--/ Title -->
+
         <!-- Name -->
         <div v-if="title === undefined && ogTitle === undefined">
             <h3>{{ name }}</h3>
@@ -49,6 +51,7 @@ export default {
             </div>
         </div>
         <!--/ Name -->
+
         <!-- Stars rating -->
         <ul>
             <!-- Full stars -->
@@ -63,6 +66,7 @@ export default {
             <!--/ Empty stars -->
         </ul>
         <!--/ Stars rating -->
+
         <!-- Flag -->
         <div class="flag">
             <div v-if="lang === 'it'" class="language">
@@ -74,11 +78,14 @@ export default {
             <div class="language" v-else>Lingua originale: <span>{{ lang.toUpperCase() }}</span></div>
         </div>
         <!--/ Flag -->
+
         <!-- Overview -->
-        <p v-if="overview !== ''">
-        <h4>Overview:</h4>
-        {{ overview }}
-        </p>
+        <div v-if="overview !== ''">
+            <p>
+            <h4>Overview:</h4>
+            {{ overview }}
+            </p>
+        </div>
         <!--/ Overview -->
     </div>
     <!--/ Movies/Series info -->
@@ -92,8 +99,6 @@ h4 {
 h3 {
     margin-bottom: 15px;
 }
-
-
 
 .cover {
     width: 100%;
