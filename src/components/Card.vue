@@ -75,7 +75,7 @@ export default {
         </div>
         <!--/ Flag -->
         <!-- Overview -->
-        <p>
+        <p v-if="overview !== ''">
         <h4>Overview:</h4>
         {{ overview }}
         </p>
@@ -90,7 +90,7 @@ h4 {
 }
 
 h3 {
-    margin: 20px 0;
+    margin-bottom: 15px;
 }
 
 img {
