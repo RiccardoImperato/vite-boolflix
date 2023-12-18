@@ -1,6 +1,6 @@
 <script >
-
 export default {
+    // Card proprs from AppMain
     props: {
         title: String,
         ogTitle: String,
@@ -11,6 +11,7 @@ export default {
     },
     components: {
     },
+    // rate is divided by 2 to get the number of full stars  
     computed: {
         getStars() {
             return Math.ceil(this.rate / 2);
@@ -20,27 +21,37 @@ export default {
 </script>
 
 <template>
+    <!-- Movies and Series cover -->
     <div class="cover">
         <img v-if="img !== null" :src="'https://image.tmdb.org/t/p/w342' + img" :alt="title">
         <div v-else class="no-image">
-            <font-awesome-icon icon="fa-regular fa-image" />
+            <h5>{{ title }}</h5>
         </div>
     </div>
+    <!--/ Movies and Series cover -->
+    <!-- Movies - Series info -->
     <div class="info">
-        <h3>
-            {{ title }}
-        </h3>
+        <!-- Title -->
+        <h3>{{ title }}</h3>
         <div v-if="title !== ogTitle">
             Titolo originale: <h4>{{ ogTitle }}</h4>
         </div>
+        <!--/ Title -->
+        <!-- Stars rating -->
         <ul>
+            <!-- Full stars -->
             <li v-for="n in getStars" class="solid">
                 <font-awesome-icon icon="fa-solid fa-star" />
             </li>
+            <!--/ Full stars -->
+            <!-- Empty stars -->
             <li v-for="n in 5 - getStars" class="regular">
                 <font-awesome-icon icon="fa-regular fa-star" />
             </li>
+            <!--/ Empty stars -->
         </ul>
+        <!--/ Stars rating -->
+        <!-- Flag -->
         <div class="flag">
             <div v-if="lang === 'it'" class="language">
                 <img src="https://cdn.pixabay.com/photo/2012/04/01/19/18/flag-24134_1280.png">
@@ -48,13 +59,17 @@ export default {
             <div v-else-if="lang === 'en'" class="language">
                 <img src="https://www.britain-visitor.com/images/content_images/union-flag-1.jpg">
             </div>
-            <div class="language" v-else>Lingua originale: <span>{{ lang }}</span></div>
+            <div class="language" v-else>Lingua originale: <span>{{ lang.toUpperCase() }}</span></div>
         </div>
+        <!--/ Flag -->
+        <!-- Overview -->
         <p>
         <h4>Overview:</h4>
         {{ overview }}
         </p>
+        <!--/ Overview -->
     </div>
+    <!--/ Movies/Series info -->
 </template>
 
 <style scoped lang="scss">
@@ -67,7 +82,10 @@ h3 {
 }
 
 img {
+    height: 550px;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -76,7 +94,7 @@ img {
 }
 
 .info {
-    padding: 0 20px;
+    padding: 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -93,9 +111,8 @@ img {
 
 .no-image {
     text-align: center;
-    height: 100%;
     font-size: 50px;
-    margin-bottom: 10px;
+    padding: 20px;
     color: #fff;
 }
 

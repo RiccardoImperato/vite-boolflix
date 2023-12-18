@@ -14,9 +14,11 @@ export default {
     },
     methods: {
         search() {
+            // API call for movies
             axios.get(this.store.apiURL + '?query=' + this.store.searchKey + '&api_key=' + this.store.apiKey).then((response) => {
                 this.store.movieList = response.data.results;
             });
+            // API call for series
             axios.get(this.store.apiURLtv + '?api_key=' + this.store.apiKey + '&query=' + this.store.searchKey).then((response) => {
                 this.store.tvList = response.data.results;
             });
@@ -38,6 +40,7 @@ header {
     background-color: #000;
 
     h1 {
+        text-transform: uppercase;
         font-size: 40px;
         color: #ff0000;
         margin-bottom: 20px;

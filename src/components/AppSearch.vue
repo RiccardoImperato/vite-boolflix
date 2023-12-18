@@ -11,10 +11,12 @@ export default {
 </script>
 
 <template>
+    <!-- Serach input -->
     <div>
         <input type="text" placeholder="Cerca film o serie TV" v-model="this.store.searchKey" id="search">
         <button @click="$emit('search')">Search</button>
     </div>
+    <!--/ Serach input -->
 </template>
 
 <style scoped lang="scss">
