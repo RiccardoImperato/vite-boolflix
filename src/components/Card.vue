@@ -4,6 +4,8 @@ export default {
     props: {
         title: String,
         ogTitle: String,
+        name: String,
+        ogName: String,
         lang: String,
         rate: Number,
         img: String,
@@ -32,11 +34,21 @@ export default {
     <!-- Movies - Series info -->
     <div class="info">
         <!-- Title -->
-        <h3>{{ title }}</h3>
-        <div v-if="title !== ogTitle">
-            Titolo originale: <h4>{{ ogTitle }}</h4>
+        <div>
+            <h3>{{ title }}</h3>
+            <div v-if="title !== ogTitle">
+                Titolo originale: <h4>{{ ogTitle }}</h4>
+            </div>
         </div>
         <!--/ Title -->
+        <!-- Name -->
+        <div v-if="title === undefined && ogTitle === undefined">
+            <h3>{{ name }}</h3>
+            <div v-if="name !== ogName">
+                Titolo originale: <h4>{{ ogName }}</h4>
+            </div>
+        </div>
+        <!--/ Name -->
         <!-- Stars rating -->
         <ul>
             <!-- Full stars -->

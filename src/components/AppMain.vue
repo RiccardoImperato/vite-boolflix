@@ -1,5 +1,6 @@
 <script >
 import { store } from '../store';
+import axios from 'axios';
 import Card from './Card.vue';
 
 export default {
@@ -11,10 +12,31 @@ export default {
             store
         }
     },
+    created() {
+        // API call for trends
+        axios.get(this.store.apiURLtrends + '?api_key=' + this.store.apiKey).then((response) => {
+            this.store.trendsList = response.data.results;
+        })
+    }
 }
 </script>
 
 <template>
+    <!-- Trends -->
+    <section v-if="this.store.movieList.length === 0 || this.store.tvList.length === 0">
+        <h2 v-if="this.store.trendsList.length">Trends</h2>
+        <ul>
+            <!-- Card component for trends -->
+            <li v-for="trend in this.store.trendsList" class="card">
+                <Card :img="trend.poster_path" :title="trend.title" :ogTitle="trend.original_title" :name="trend.name"
+                    :ogName="trend.original_name" :rate="trend.vote_average" :lang="trend.original_language"
+                    :overview="trend.overview" />
+            </li>
+            <!--/ Card component for trends -->
+        </ul>
+    </section>
+    <!--/ Trends -->
+
     <!-- Movies -->
     <section>
         <h2 v-if="this.store.movieList.length">Movies</h2>
