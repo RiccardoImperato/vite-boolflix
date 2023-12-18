@@ -88,6 +88,7 @@ ul {
         align-items: center;
         position: relative;
         background-color: rgba($color: #000000, $alpha: 0.3);
+        border-radius: 5px;
     }
 }
 </style>

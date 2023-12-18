@@ -93,16 +93,19 @@ h3 {
     margin-bottom: 15px;
 }
 
-img {
-    height: 550px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
+
 
 .cover {
     width: 100%;
+
+    img {
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: 5px;
+    }
 }
 
 .info {
@@ -115,6 +118,7 @@ img {
     background-color: rgba($color: #000000, $alpha: 0.9);
     opacity: 0;
     overflow-y: auto;
+    border-radius: 5px;
 
     &:hover {
         opacity: 1;
@@ -143,7 +147,6 @@ ul {
 }
 
 .language {
-
     margin-top: 20px;
 
     img {
