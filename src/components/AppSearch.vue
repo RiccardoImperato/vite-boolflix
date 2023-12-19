@@ -13,7 +13,7 @@ export default {
 <template>
     <!-- Serach input -->
     <div>
-        <input @keyup.enter="$emit('search')" type="text" placeholder="Cerca film o serie TV" v-model="this.store.searchKey"
+        <input @keyup.enter="$emit('search')" type="text" placeholder="Cerca film o serie TV" v-model="store.searchKey"
             id="search">
         <button @click="$emit('search')">Search</button>
     </div>
